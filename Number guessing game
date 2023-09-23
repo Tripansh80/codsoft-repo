@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+int main() {
+    int n1, n2;
+    char e;
+
+    cout << " Welcome to  number guessing game.  "<<endl;
+    cout << "Rules:"<<endl;
+    cout << "1. Enter 'y' for yes and 'n' for exit the game "<<endl;
+    cout << "2. You have to guess a number in between 1-10 "<<endl;
+
+    
+    srand(time(0));
+
+    do {
+        
+        n2 = rand() % 10 + 1;
+
+        cout << "Enter your guess (1-10): ";
+        cin >> n1;
+
+        if (n1 < 1 || n1 > 10) {
+            cout << "Please guess between 1 to 10." << endl;
+        } else {
+            if (n2 == n1) {
+                cout << "Congratulations! Your number is right: " << n2 << endl;
+            } else {
+                cout << "Sorry, the correct number was: " << n2 << endl;
+            }
+
+            cout << "play again?????? (y/n): ";
+            cin >> e;
+        }
+    } while (e == 'y' || e == 'Y');
+
+    cout << "Thankyou for playing" << endl;
+
+    return 0;
+}
